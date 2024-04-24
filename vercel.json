@@ -1,13 +1,13 @@
 {
     "builds": [{
-        "src": "health/healthcheck/wsgi.py",
+        "src": "healthcheck/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
     }],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "health/healthcheck/wsgi.py"
+            "dest": "healthcheck/wsgi.py"
         }
     ]
 }
