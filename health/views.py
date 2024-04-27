@@ -2,7 +2,6 @@ from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Health
 from .serializers import HealthSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -79,20 +78,3 @@ class PredictObesity(APIView):
 
 
 
-class HealthListCreateAPIView(APIView):
-    permission_classes = [AllowAny]
-
-    def get_queryset(self):
-        return Health.objects.all()
-
-    def get(self, request, *args, **kwargs):
-        health_data = self.get_queryset()
-        serializer = HealthSerializer(health_data, many=True)
-        return Response(serializer.data)
-
-    def post(self, request, *args, **kwargs):
-        serializer = HealthSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
