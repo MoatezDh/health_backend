@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-$i5mcab3iei(rfvaf*aj=z2l9ij2mt9#dtdu+w@8)fwhv+)t#c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost','moatezdh.pythonanywhere.com']
+ALLOWED_HOSTS = ['localhost','https://checkhealthapp.azurewebsites.net']
 
 
 # Application definition
