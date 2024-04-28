@@ -279,5 +279,5 @@ JAZZMIN_UI_TWEAKS = {
 }
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',  
-    'https://662db870cd933b5ac20a3daf--jocular-belekoy-ed197d.netlify.app/',# Your React application's domain
+    'https://healthhorizon.netlify.app/',# Your React application's domain
 ]
