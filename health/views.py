@@ -14,13 +14,17 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
+import os
+from django.conf import settings
+
 class PredictObesity(APIView):
     permission_classes = [AllowAny]
 
     def post(self, request, *args, **kwargs):
         # Step 1: Load the dataset
-        dataset = pd.read_csv("C:\\Users\\EBM\\OneDrive\\Bureau\\Check_Your_health\\server\\health\\ObesityDataSet.csv")
-
+        dataset_path = os.path.join(settings.BASE_DIR, 'health','ObesityDataSet.csv')
+        dataset = pd.read_csv(dataset_path)
+        
         # Step 2: Define mapping
         mapping = {
             "Gender": {"Female": 2, "Male": 1},
