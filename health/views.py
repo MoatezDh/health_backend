@@ -74,6 +74,8 @@ class PredictObesity(APIView):
     
         # Step 10: Return the predicted class label in the response
         return Response({'predicted_class': predicted_class_label})
+    def get(self, request, *args, **kwargs):
+        return Response({"message": "GET method is not allowed for this endpoint. Please use POST."})
 
 
 
